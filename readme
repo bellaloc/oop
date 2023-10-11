@@ -1,0 +1,46 @@
+# Logo Generator
+
+A simple command-line application for generating logos for your projects.
+
+## Description
+
+As a freelance web developer, you can use this command-line tool to quickly generate simple logos without the need for a graphic designer. The application allows you to choose text, text color, and shapes, and then it generates an SVG logo.
+
+## Features
+
+- Accepts up to three characters for the logo.
+- Customizable text color (supports color keywords or hexadecimal values).
+- Shape selection (circle, triangle, or square).
+- Shape color customization.
+- Generates an SVG file named `logo.svg`.
+- Option to convert the SVG to an image (PNG or JPG) named `logo.png`.
+
+## Installation
+
+1. Clone this repository or download the source code.
+2. Navigate to the project directory using your terminal.
+3. Install the required packages by running the following command:
+
+   ```bash
+   npm install
+
+## Usage
+Run the application using the following command:
+
+bash
+Copy code
+node index.js
+Follow the prompts to generate your logo.
+
+## Demonstration
+Watch a video demonstration of the application's functionality here. (video coming soon)
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+This project was inspired by the need for a simple logo generation tool for web developers.
+Special thanks to the inquirer and svg2img packages.
+
+## Contact
+If you have any questions or suggestions, feel free to contact me at bellalococo@gmail.com.

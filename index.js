@@ -19,7 +19,7 @@ async function generateLogo() {
             type: 'list',
             name: 'shape',
             message: 'Choose a shape:',
-            choices: ['circle', 'triangle', 'square'],
+            choices: [{name: 'circle', value: "circle"}, {name: 'triangle', value: "polygon"}, {name: 'square', value: "rect"}],
         },
         {
             type: 'input',
@@ -27,24 +27,46 @@ async function generateLogo() {
             message: 'Enter the shape color (color keyword or hex):',
         },
     ]);
+console.log (userInput)
 
     const template = fs.readFileSync('template.svg', 'utf8');
-    const svgWithReplacements = template
-        .replace('LOGO_TEXT', userInput.text)
-        .replace('<shape />', `<${userInput.shape} fill="${userInput.shapeColor}" />`);
+    let svgWithReplacements;
+    if (userInput.shape === "circle") { 
+        
 
+    svgWithReplacements = template
+        .replace('LOGO_TEXT', userInput.text)
+        .replace('TEXT_COLOR', userInput.textColor) 
+        .replace('<shape />', `<${userInput.shape} fill="${userInput.shapeColor}" cx="120" cy="120" r="80"/>`);
+    
+        fs.writeFileSync('logo.svg', svgWithReplacements);
+    }
+    else if (userInput.shape === "rect") {
+        svgWithReplacements = template
+        .replace('LOGO_TEXT', userInput.text)
+        .replace('TEXT_COLOR', userInput.textColor) 
+        .replace('<shape />', `<${userInput.shape} fill="${userInput.shapeColor}" x="90" y="40" width="120" height="120"/>`);
+
+        
     fs.writeFileSync('logo.svg', svgWithReplacements);
+    } else {
+        svgWithReplacements = template
+        .replace('LOGO_TEXT', userInput.text)
+        .replace('TEXT_COLOR', userInput.textColor) 
+        .replace('<shape />', `<${userInput.shape} fill="${userInput.shapeColor}" x="90" y="40" width="120" height="120"/>`);
+
+    }
 
     console.log('Generated logo.svg');
 
-    svg2img(fs.createReadStream('logo.svg'), (error, buffer) => {
-        if (error) {
-            console.error('Failed to convert SVG to an image:', error);
-        } else {
-            fs.writeFileSync('logo.png', buffer);
-            console.log('Generated logo.png');
-        }
-    });
+//     //svg2img(fs.createReadStream('logo.svg'), (error, buffer) => {
+//         if (error) {
+//             console.error('Failed to convert SVG to an image:', error);
+//         } else {
+//             fs.writeFileSync('logo.png', buffer);
+//             console.log('Generated logo.png');
+//         }
+//     });
 }
 
 generateLogo();

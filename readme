@@ -17,7 +17,8 @@ As a freelance web developer, you can use this command-line tool to quickly gene
 
 ## Installation
 
-1. Clone this repository or download the source code.
+1. Clone this repository or download the source code. 
+https://github.com/bellaloc/oop
 2. Navigate to the project directory using your terminal.
 3. Install the required packages by running the following command:
 
@@ -27,11 +28,13 @@ As a freelance web developer, you can use this command-line tool to quickly gene
 ## Usage
 Run the application using the following command:
 
+bash
+Copy code
 node index.js
 Follow the prompts to generate your logo.
 
 ## Demonstration
-Watch a video demonstration of the application's functionality here. (https://drive.google.com/file/d/1LRCCgFDANG_2okFjraOrWhE86YWfuuAH/view)
+Watch a video demonstration of the application's functionality here. https://drive.google.com/file/d/1LRCCgFDANG_2okFjraOrWhE86YWfuuAH/view
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -41,4 +44,4 @@ This project was inspired by the need for a simple logo generation tool for web 
 Special thanks to the inquirer and svg2img packages.
 
 ## Contact
-If you have any questions or suggestions, feel free to contact me at bellalococo@gmail.com.
+If you have any questions or suggestions, feel free to contact me at your.email@example.com.
